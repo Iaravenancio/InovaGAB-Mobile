@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
+import br.com.fiap.inovagab.data.api.RetrofitClient
 import br.com.fiap.inovagab.ui.MainNavContainer
 import br.com.fiap.inovagab.viewmodel.InovaGABViewModel
 
@@ -14,6 +15,7 @@ class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        RetrofitClient.inicializar(this)
         setContent {
             // Executa a interface injetando o motor do projeto
             MainNavContainer(viewModel = viewModel)
